@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Приложение "Заметки" на Next.js (Упрощенное)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Создайте приложение для управления заметками:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Список заметок: отображение всех заметок с возможностью
+фильтрации и сортировки. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Просмотр заметки: страница с детальной информацией о заметке. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Создание/Редактирование заметки: страница с формой для создания
+новой заметки или редактирования существующей. 
 
-## Learn More
+### Основные Требования:
 
-To learn more about Next.js, take a look at the following resources:
+Next.js: Разработайте приложение с использованием Next.js, учитывая серверный рендеринг и генерацию статических страниц. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+React: Применяйте хуки и функциональные компоненты. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+CSS Modules и Bootstrap: Используйте CSS Modules для стилизации
+компонентов и Bootstrap для общего стиля приложения и UI- компонентов. 
 
-## Deploy on Vercel
+Адаптивная Вёрстка: Приложение должно корректно отображаться и
+быть функциональным на всех типах устройств (десктоп, планшет, мобильные устройства). 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Верстка должна быть адаптивной и удобной для пользователя на любом размере экрана. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Стейт-менеджмент: Выберите Redux или Context API для управления состоянием приложения. 
+
+Маршрутизация: Следуйте принципам файловой системы Next.js для маршрутизации и используйте динамическую маршрутизацию, где это уместно.
+
+Бэкенд: Используйте json-server или аналогичный инструмент для создания мока AP.
