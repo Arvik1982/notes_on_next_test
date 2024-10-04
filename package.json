@@ -5,22 +5,27 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "nodemon db.json --exec json-server --watch",
     "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "js-cookie": "^3.0.5",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
     "react-redux": "^9.1.2"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
+    "json-server": "^1.0.0-beta.3",
+    "nodemon": "^3.1.7",
     "typescript": "^5"
   }
 }

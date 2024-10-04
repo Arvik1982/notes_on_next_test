@@ -31,3 +31,15 @@ CSS Modules и Bootstrap: Используйте CSS Modules для стилиз
 Маршрутизация: Следуйте принципам файловой системы Next.js для маршрутизации и используйте динамическую маршрутизацию, где это уместно.
 
 Бэкенд: Используйте json-server или аналогичный инструмент для создания мока AP.
+
+## START:
+
+Бэкенд: json-server - npm run start
+Проект: Next.js - npm run dev
+
+По умолчанию выполнение сценариев может быть отключено, что приводит к ошибке при попытке запустить json-server.
+
+1. Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+2. json-server --watch db.json
+
