@@ -25,18 +25,18 @@ export default function LoginForm() {
       const router = useRouter();
 
 return(
-
+<> <h1>Вход</h1>
 <form
         className={styles.container__enter_form}
         onSubmit={handleSubmit(onSubmit)}
       >
         <article className={styles.center__form_item}>
-          <label className={styles.form__item_label} htmlFor="pass">
+          <label className={styles.form__item_label} htmlFor="name">
             Введите имя
           </label>
           <input
             className={styles.form__item_input}
-            id="pass"
+            id="name"
             {...register("name", {
               required: "Имя обязательно",
               onChange: () => {
@@ -52,5 +52,6 @@ return(
           Войти
         </button>
       </form>
+      </>
       
     )}

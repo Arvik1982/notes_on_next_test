@@ -1,0 +1,21 @@
+.header__container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; top:0;
+    left: 0;
+    padding: 5px;
+    box-shadow: var(--round-shadow);
+    z-index: 101;
+    background-color: var(--main-background);
+    opacity: 0.8;
+}
+
+.header__container_title{
+  
+
+   
+
+}
