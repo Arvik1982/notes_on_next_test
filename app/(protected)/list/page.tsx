@@ -51,12 +51,11 @@ export default function ListOfNotes() {
   };
 
   const debouncedSearch = debounce((text): void => {
-    notes &&
-      setFilteredNotes(
-        notes.filter((note: TNote) => {
-          return note.title.includes(text);
-        })
-      );
+    setFilteredNotes(
+      notes.filter((note: TNote) => {
+        return note.title.includes(text);
+      })
+    );
   }, 300);
 
   useEffect(() => {
@@ -67,7 +66,8 @@ export default function ListOfNotes() {
   }, [userData, notes]);
 
   return (
-    <>{isLoading&&<span>loading...</span>}
+    <>
+      {isLoading && <span>loading...</span>}
       {!error && (
         <section className={styles.content__section}>
           <article className={styles.content__section_filters}>
@@ -86,7 +86,9 @@ export default function ListOfNotes() {
               }}
               className={styles.filters__button}
               onClick={() => {
-                filteredNotes && handleSort(filteredNotes, setFilteredNotes);
+                if (filteredNotes) {
+                  handleSort(filteredNotes, setFilteredNotes);
+                }
               }}
             >
               <SortIcon />
