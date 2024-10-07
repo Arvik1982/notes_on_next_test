@@ -6,7 +6,7 @@
   gap: 10px;
   align-items: center;
 }
-p .content__section_filters {
+.content__section_filters {
   width: 100%;
   display: flex;
   gap: 10px;

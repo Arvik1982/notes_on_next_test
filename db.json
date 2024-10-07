@@ -4,21 +4,6 @@
       "id": "1728237257090",
       "title": "2 We create the scrollTop and scrolling states with the useState hook.  Next, we call the useEffect hook with a callback that calls addEventListener to listen for scroll events triggered on the browser screen.  The onScroll function sets the scrollTop and scrolling state values.  We know we’re scrolling when e.target.documentElement.scrollTop > scrollTop is true .  We return a callback that calls removeEventListener to remove the scroll event listener when we unmount the component.  And we log the latest value of scrolling in the useEffect callback.  Finally, we return some content we can scroll through in the JSX.  Now when we scroll, we should see the latest value of scrolling logged.",
       "content": "We create the scrollTop and scrolling states with the useState hook.\n\nNext, we call the useEffect hook with a callback that calls addEventListener to listen for scroll events triggered on the browser screen.\n\nThe onScroll function sets the scrollTop and scrolling state values.\n\nWe know we’re scrolling when e.target.documentElement.scrollTop > scrollTop is true .\n\nWe return a callback that calls removeEventListener to remove the scroll event listener when we unmount the component.\n\nAnd we log the latest value of scrolling in the useEffect callback.\n\nFinally, we return some content we can scroll through in the JSX.\n\nNow when we scroll, we should see the latest value of scrolling logged."
-    },
-    {
-      "id": "1728294450098",
-      "title": "ttjty",
-      "content": "yyjt"
-    },
-    {
-      "id": "1728294458875",
-      "title": "jyy5",
-      "content": "j5j5"
-    },
-    {
-      "id": "1728294468939",
-      "title": "5j5j",
-      "content": "5j5j5j"
     }
   ]
 }
