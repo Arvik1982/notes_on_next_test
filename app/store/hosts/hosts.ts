@@ -1,1 +1,1 @@
-export const NOTES ='http://localhost:3000'
+export const NOTES = "http://localhost:3000";

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import {NOTES} from "../hosts/hosts";
+import { NOTES } from "../hosts/hosts";
 
 export const getNotesRtq = createApi({
   reducerPath: "apiRtq/getNotesRtq",
@@ -8,9 +8,8 @@ export const getNotesRtq = createApi({
   }),
   endpoints: (builder) => ({
     getNotes: builder.query({
-      query: () =>`/all`}),
-
+      query: () => `/all`,
+    }),
   }),
 });
 export const { useGetNotesQuery } = getNotesRtq;
-

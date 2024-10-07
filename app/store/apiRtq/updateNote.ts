@@ -9,12 +9,12 @@ export const updateNoteMutation = createApi({
   }),
   endpoints: (builder) => ({
     updateNote: builder.mutation({
-      query: (updatingNote:TNote) => ({
-        url: `/all/${updatingNote.id}/`, 
+      query: (updatingNote: TNote) => ({
+        url: `/all/${updatingNote.id}/`,
         method: "PATCH",
-        body: {            
+        body: {
           title: updatingNote.title,
-          content:updatingNote.content,
+          content: updatingNote.content,
         },
       }),
     }),

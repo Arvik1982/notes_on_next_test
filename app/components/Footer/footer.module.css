@@ -7,19 +7,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  
 }
 .footer__container_title {
+  font-family: "OpenSans";
+  font-size: 19px;
+  color: var(--main-text-color);
   border-radius: 4px;
-    position: absolute;
-    border: 4px;
-    padding: 5px;
-    left: -182px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--transparent-background-1);
+  position: absolute;
+  border: 4px;
+  padding: 5px;
+  left: -182px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--transparent-background-1);
+  margin-bottom: 0;
 }
 
 .footer__container_add {

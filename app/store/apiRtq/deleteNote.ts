@@ -6,17 +6,14 @@ export const deleteNoteMutation = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${NOTES}`,
   }),
-  endpoints: (builder) => ({  
-
+  endpoints: (builder) => ({
     deleteNote: builder.mutation({
-      query: (id:string) => ({
-        url: `/all/${id}/`, 
+      query: (id: string) => ({
+        url: `/all/${id}/`,
         method: "DELETE",
       }),
-      
     }),
   }),
 });
-
 
 export const { useDeleteNoteMutation } = deleteNoteMutation;

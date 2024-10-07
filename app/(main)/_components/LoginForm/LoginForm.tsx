@@ -2,7 +2,7 @@
 
 import styles from "./loginForm.module.css";
 import { TLoginFormInputs } from "@/app/types/types";
-import { useErrorStatus } from "@/app/store/hooks/hooks";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
@@ -17,8 +17,9 @@ export default function LoginForm() {
   } = useForm<TLoginFormInputs>();
 
   const [statusNameError, setStatusNameError] = useState(false);
+
   const onSubmit = (data: TLoginFormInputs) => {
-    Cookies.set("name", data.name.toLowerCase(), { expires: 30 });
+    Cookies.set("name", data.name, { expires: 30 });
     router.push("/list");
   };
 
@@ -38,23 +39,31 @@ export default function LoginForm() {
           <label className={styles.form__item_label} htmlFor="name">
             Введите имя
           </label>
-          <input
-            className={styles.form__item_input}
-            id="name"
-            {...register("name", {
-              required: "Имя обязательно",
-              onChange: () => {
-                setStatusNameError(false);
-              },
-            })}
-          ></input>
+
+          <InputGroup>
+            <FormControl
+              id="name"
+              {...register("name", {
+                required: "Имя обязательно",
+                onChange: () => {
+                  setStatusNameError(false);
+                },
+              })}
+            />
+          </InputGroup>
+
           {statusNameError && (
             <p className={styles.form__item_error}>{errors.name?.message}</p>
           )}
         </article>
-        <button className={styles.center__form_button} type="submit">
+
+        <Button
+          variant="primary"
+          className={styles.center__form_button}
+          type="submit"
+        >
           Войти
-        </button>
+        </Button>
       </form>
     </>
   );

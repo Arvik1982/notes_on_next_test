@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 }
-.container__form_item{
+.container__form_item {
   position: relative;
   width: 90%;
 }
@@ -36,18 +36,17 @@
   justify-content: flex-end;
 }
 
-.buttons__box_button{
-    border: 0;
-    padding: 5px;
-    height: 35px;
-    width: 100px;
-    background-color: var(--disabled-button-color);
-  }
-  .error{
-    color: tomato;
-    position: absolute;
-    font-size: 9px;
-    bottom:-10px;
-    left: 0;
-  }
-
+.buttons__box_button {
+  border: 0;
+  padding: 5px;
+  height: 35px;
+  width: 100px;
+  background-color: var(--disabled-button-color);
+}
+.error {
+  color: tomato;
+  position: absolute;
+  font-size: 9px;
+  bottom: -15px;
+  left: 0;
+}

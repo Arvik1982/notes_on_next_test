@@ -12,8 +12,8 @@ export const addNewNoteMutation = createApi({
     baseUrl: `${NOTES}`,
   }),
   endpoints: (builder) => ({
-    addNewNote: builder.mutation<void,TAddNewNote>({
-      query: ({ newNote}) => ({
+    addNewNote: builder.mutation<void, TAddNewNote>({
+      query: ({ newNote }) => ({
         url: `/all`,
         method: "POST",
         body: {

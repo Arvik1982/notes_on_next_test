@@ -8,6 +8,8 @@ import { TNote } from "@/app/types/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import debounce from "lodash.debounce";
 import SortIcon from "@/app/components/Icons/SortIcon";
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks/hooks";
+import { setData } from "@/app/store/slices/noteSlice";
 
 export default function ListOfNotes() {
   const {
@@ -18,10 +20,12 @@ export default function ListOfNotes() {
   } = useGetNotesQuery(undefined);
 
   const [sorted, setSorted] = useState(false);
-  const [searchedText, setSearchedText] = useState("");
   const [filteredNotes, setFilteredNotes] = useState<TNote[]>();
   const [deleteNote] = useDeleteNoteMutation();
   const router = useRouter();
+
+  const dispatch = useAppDispatch();
+  const userData = useAppSelector((state) => state.notesSlice.data);
 
   const handleDelete = async (id: string) => {
     try {
@@ -43,7 +47,7 @@ export default function ListOfNotes() {
   const handleInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    setSearchedText(event.target.value);
+    dispatch(setData(event.target.value));
   };
 
   const debouncedSearch = debounce((text): void => {
@@ -56,14 +60,14 @@ export default function ListOfNotes() {
   }, 300);
 
   useEffect(() => {
-    debouncedSearch(searchedText);
+    debouncedSearch(userData);
     return () => {
       debouncedSearch.cancel();
     };
-  }, [searchedText, notes]);
+  }, [userData, notes]);
 
   return (
-    <>
+    <>{isLoading&&<span>loading...</span>}
       {!error && (
         <section className={styles.content__section}>
           <article className={styles.content__section_filters}>
@@ -71,7 +75,7 @@ export default function ListOfNotes() {
               placeholder="Название"
               className={styles.filters__input}
               type="text"
-              value={searchedText}
+              value={userData}
               onChange={handleInputChange}
             />
 
@@ -125,10 +129,10 @@ export default function ListOfNotes() {
               })}
         </section>
       )}
-{filteredNotes?.length===0&& <h3>Нет заметок</h3>}
+      {filteredNotes?.length === 0 && <h3>Нет заметок</h3>}
       {error && (
         <section className={styles.content__section}>
-          <h3>Ошибка, попробуйте обновить страницу позже</h3>
+          <h3>Ошибка, проверьте сервер, попробуйте обновить страницу позже</h3>
         </section>
       )}
     </>
