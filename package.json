@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "nodemon db.json --exec json-server --watch",
+    "start": "nodemon db.json --exec json-server --watch ",
     "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
+    "framer-motion": "^11.11.1",
     "js-cookie": "^3.0.5",
+    "lodash.debounce": "^4.0.8",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

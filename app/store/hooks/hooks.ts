@@ -4,18 +4,24 @@ import { AppDispatch, AppStore, RootState } from "../store";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FieldErrors } from "react-hook-form";
-import { TLoginFormInputs } from "@/app/types/types";
+import {  TNotesFormInputs } from "@/app/types/types";
 
 // Хук для отслеживания ошибки ввода логин формы
-export function useErrorStatus(errors: FieldErrors<TLoginFormInputs>) {
-  const [statusNameError, setStatusNameError] = useState(false);
+export function useErrorStatus(errors: FieldErrors<TNotesFormInputs>) {
+  const [statusTitleError, setStatusTitleError] = useState(false);
+  const [statusContentError, setStatusContentError] = useState(false);
 
   useEffect(() => {
-    setStatusNameError(true);
-  }, [errors.name]);
+    setStatusTitleError(true);
+  }, [errors.title]);
+  useEffect(() => {
+    setStatusContentError(true);
+  }, [errors.content]);
+
+
   return {
-    statusNameError,
-    setStatusNameError,
+    statusTitleError,statusContentError,
+    setStatusTitleError,setStatusContentError
   };
 }
 

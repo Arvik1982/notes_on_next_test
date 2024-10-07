@@ -13,7 +13,7 @@ export default function NewNoteLayout({
   children: React.ReactNode;
 }>) {
   return <ContentWrapper>
-    <Header/>
+    <Header title="Новая заметка"/>
     {children}
     </ContentWrapper>;
 }

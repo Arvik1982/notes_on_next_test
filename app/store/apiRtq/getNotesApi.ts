@@ -9,6 +9,7 @@ export const getNotesRtq = createApi({
   endpoints: (builder) => ({
     getNotes: builder.query({
       query: () =>`/all`}),
+
   }),
 });
 export const { useGetNotesQuery } = getNotesRtq;

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import styles from "./loginForm.module.css";
 import { TLoginFormInputs } from "@/app/types/types";
@@ -6,27 +6,31 @@ import { useErrorStatus } from "@/app/store/hooks/hooks";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
 
 export default function LoginForm() {
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TLoginFormInputs>();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm<TLoginFormInputs>(); // Хук для работы с формой
-    
-      const { statusNameError, setStatusNameError } = useErrorStatus(errors); // Хук для отслеживания ошибки ввода в поле инпут
-    
-      const onSubmit = (data: TLoginFormInputs) => {
-        Cookies.set("name", data.name.toLowerCase(), { expires: 30 }); // Cookie expires in 30 days
-        router.push("/list");
-        // можно добавить логику для обработки данных формы, например, отправку на сервер
-      };
-      const router = useRouter();
+  const [statusNameError, setStatusNameError] = useState(false);
+  const onSubmit = (data: TLoginFormInputs) => {
+    Cookies.set("name", data.name.toLowerCase(), { expires: 30 });
+    router.push("/list");
+  };
 
-return(
-<> <h1>Вход</h1>
-<form
+  useEffect(() => {
+    setStatusNameError(true);
+  }, [errors.name]);
+
+  return (
+    <>
+      {" "}
+      <h1>Вход</h1>
+      <form
         className={styles.container__enter_form}
         onSubmit={handleSubmit(onSubmit)}
       >
@@ -52,6 +56,6 @@ return(
           Войти
         </button>
       </form>
-      </>
-      
-    )}
+    </>
+  );
+}

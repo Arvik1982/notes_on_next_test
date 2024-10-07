@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { NOTES } from "../hosts/hosts";
+import { TNote } from "@/app/types/types";
+
+type TAddNewNote = {
+  newNote: TNote;
+};
 
 export const addNewNoteMutation = createApi({
   reducerPath: "apiRtq/addNewNoteRtq",
@@ -7,8 +12,8 @@ export const addNewNoteMutation = createApi({
     baseUrl: `${NOTES}`,
   }),
   endpoints: (builder) => ({
-    addNewNote: builder.mutation({
-      query: ({ newNote }) => ({
+    addNewNote: builder.mutation<void,TAddNewNote>({
+      query: ({ newNote}) => ({
         url: `/all`,
         method: "POST",
         body: {

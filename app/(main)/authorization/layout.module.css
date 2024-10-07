@@ -4,6 +4,7 @@
     flex-direction: column;
     padding: 10px;
     position: fixed;
+    top:100px;
     width: 90%;
     max-width: 400px;
     height: 250px;

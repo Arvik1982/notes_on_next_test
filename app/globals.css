@@ -1,7 +1,7 @@
 :root {
   --main-background: rgb(255, 255, 255);
-  --main-color: rgb(75, 164, 208);
-  --main-text-color:rgba(56, 80, 110, 1);/* Основной цвет текста */
+  --main-color: #4ba4d0;
+  --main-text-color:#38506e;/* Основной цвет текста */
   --main-border-color: rgba(75, 164, 208, 0.3);
   --transparent-background-1:rgba(0, 128, 0, 0.066);
   --transparent-background-2:rgb(255, 0, 0, 0.066);

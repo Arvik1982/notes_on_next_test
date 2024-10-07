@@ -9,7 +9,7 @@ export const deleteNoteMutation = createApi({
   endpoints: (builder) => ({  
 
     deleteNote: builder.mutation({
-      query: (id) => ({
+      query: (id:string) => ({
         url: `/all/${id}/`, 
         method: "DELETE",
       }),
