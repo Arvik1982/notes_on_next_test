@@ -1,0 +1,15 @@
+.page__container_auth {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 10px;
+    position: fixed;
+    top:100px;
+    width: 90%;
+    max-width: 400px;
+    height: 250px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: var(--round-shadow);
+    align-items: center;
+  }

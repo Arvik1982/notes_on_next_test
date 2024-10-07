@@ -1,0 +1,14 @@
+.content__container_main {
+  margin-top: 60px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  max-width: 900px;
+
+}
+  
